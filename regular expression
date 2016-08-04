@@ -1,0 +1,38 @@
+regular expression
+
+1. an email address (warning: this is tricky):
+
+\w+@[a-zA-Z_|\d]+?\.[a-zA-Z]{2,3}[\.]*[a-zA-Z]*$
+
+2.  at least one w followed by any number of x's
+
+w+x*
+
+3.  any number of backslashes followed by any number of asterisks
+
+(\\)*(\*)*
+
+4. any five characters
+
+(.){5}
+
+5. the same word (nonempty sequence of nonwhitespace characters) written two or more times 
+
+(\w{2,})(\s\1)+
+
+6. any word that contains all five vowels
+
+([\w]*[aeiou]+[\w]*[aeiou]+[\w]*[aeiou]+[\w]*[aeiou]+[\w]*[aeiou]+[\w]*)
+
+7. any word that contains e before i but not i before e
+
+[^i]*[e]+[i]+[^e]*
+
+
+8. the last names of people from a comma-delimited list of first names, last names and emails
+
+[\w+]*,[\w+]*,[^,]*
+
+9. a date in the format mm/dd/yyyy or mm-dd-yyyy
+
+[\d]{2}(\/|\-)[\d]{2}(\/|\-)[\d]{4}
