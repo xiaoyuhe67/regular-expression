@@ -29,12 +29,12 @@ public class RegexTestHarness {
 			String startingpath=console.nextLine();
 			
 			walkin(new File(startingpath));	
-			
+			boolean found = false;
 			for(String a:filenames)
 			{
 				Matcher matcher = pattern.matcher(a);
 				
-				boolean found = false;
+				
 				while (matcher.find()) {
 					System.out.printf("I found the text %s starting at " + "index %d and ending at index %d\n",
 							matcher.group(), matcher.start(), matcher.end());
@@ -43,11 +43,12 @@ public class RegexTestHarness {
 					System.out.println("Filepath:" +filepath.get(a));
 					found = true;
 				}
-				if (!found) {
-					System.out.println("No match found.");
-				}
 				
 				
+				
+			}
+			if (!found) {
+				System.out.println("No match found.");
 			}
 			
 
